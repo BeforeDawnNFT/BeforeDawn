@@ -1,4 +1,7 @@
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ViewController : MonoBehaviour
 {
@@ -6,14 +9,31 @@ public class ViewController : MonoBehaviour
 
     private void Awake()
     {
-        GoToPageView(0);
+        GoToPageView(0, false);
+        pageViews[0].GetOrAddComponent<Image>();
+        pageViews[0].GetOrAddComponent<Button>().onClick.AddListener(()=> GoToPageView(1));
+        pageViews[1].GetOrAddComponent<Image>();
+        pageViews[1].GetOrAddComponent<Button>().onClick.AddListener(()=> GoToPageView(2));
     }
 
-    public void GoToPageView(int pageViewIdx)
+    public void Debug()
+    {
+        UnityEngine.Debug.Log("Hello World!");
+    }
+
+    private void GoToPageView(int pageViewIdx, bool fade = true)
     {
         if (pageViewIdx < 0) pageViewIdx = 0;
         if (pageViewIdx >= pageViews.Length) pageViewIdx = pageViews.Length - 1;
-        foreach (var go in pageViews) go.alpha = 0;
-        pageViews[pageViewIdx].alpha = 1;
+        foreach (var canvasGroup in pageViews)
+        {
+            if (fade) canvasGroup.DOFade(0, 0.5f);
+            else canvasGroup.alpha = 0;
+            canvasGroup.blocksRaycasts = false;
+        }
+        
+        if (fade) pageViews[pageViewIdx].DOFade(1, 0.5f);
+        else pageViews[pageViewIdx].alpha = 1;
+        pageViews[pageViewIdx].blocksRaycasts = true;
     }
 }
