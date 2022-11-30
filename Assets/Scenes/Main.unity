@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 747517341}
   - component: {fileID: 747517343}
   - component: {fileID: 747517342}
+  - component: {fileID: 747517344}
   m_Layer: 5
   m_Name: NFT Image
   m_TagString: Untagged
@@ -608,7 +609,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1666546528}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -635,7 +636,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 48bb60943d6904e0dbe6e65d38abdab7, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -650,6 +651,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747517340}
   m_CullTransparentMesh: 1
+--- !u!114 &747517344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747517340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18eeceabdc7f64a31a02d355bd44a00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: 48bb60943d6904e0dbe6e65d38abdab7, type: 3}
+  - {fileID: 2800000, guid: 4e68af19d63b74c5c8917e6a8d101d21, type: 3}
+  - {fileID: 2800000, guid: 9cb9dd8b162274d3eac83c3a87ff78f2, type: 3}
+  - {fileID: 2800000, guid: 818e0dd5f16df45ca9e2d722260b88ba, type: 3}
+  - {fileID: 2800000, guid: 2a8cbfa3394c34b10850f0433752d9e1, type: 3}
+  - {fileID: 2800000, guid: 83d39c26deea14d9aa7243df5a070cba, type: 3}
 --- !u!1 &834179925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,8 +1851,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1968803819}
   - {fileID: 747517341}
+  - {fileID: 1968803819}
   m_Father: {fileID: 943071384}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2066,7 +2086,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1666546528}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
