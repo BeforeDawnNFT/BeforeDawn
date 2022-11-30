@@ -16,19 +16,13 @@ public class ViewController : MonoBehaviour
         pageViews[1].GetOrAddComponent<Button>().onClick.AddListener(()=> GoToPageView(2));
     }
 
-    public void Debug()
-    {
-        UnityEngine.Debug.Log("Hello World!");
-    }
-
     private void GoToPageView(int pageViewIdx, bool fade = true)
     {
         if (pageViewIdx < 0) pageViewIdx = 0;
         if (pageViewIdx >= pageViews.Length) pageViewIdx = pageViews.Length - 1;
         foreach (var canvasGroup in pageViews)
         {
-            if (fade) canvasGroup.DOFade(0, 0.5f);
-            else canvasGroup.alpha = 0;
+            canvasGroup.alpha = 0;
             canvasGroup.blocksRaycasts = false;
         }
         
