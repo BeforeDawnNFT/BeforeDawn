@@ -20,7 +20,7 @@
             <div></div>
             <div></div>
         </div>
-        <div style="color: white;">Loading 0%</div>
+        <div id="progress-text" style="color: white;">Loading 0%</div>
     </div>
 
     <canvas id="unity-canvas" width="100%" height="100%""
@@ -45,7 +45,7 @@
         }
 
         createUnityInstance(document.querySelector("#unity-canvas"), {
-            dataUrl: "Build/c8f9f1372b8583d5e4d44de2fd632d2c.data.unityweb",
+            dataUrl: "Build/547fbdd28d532c72cb1a064207d2c7ac.data.unityweb",
             frameworkUrl: "Build/5398540c10edcf6446b7a05a8fd58899.js.unityweb",
             codeUrl: "Build/43e42eec64f9a807e24e2eacc2e02a08.wasm.unityweb",
             memoryUrl: "Build/",
@@ -60,7 +60,7 @@
                 document.querySelector("#progress").style.display = "none";
                 document.querySelector("#unity-canvas").style.display = "block";
             } else {
-                document.querySelector("#progress div:last-child").innerHTML = "Loading " + (progress * 100).toFixed(0) + "%";
+                document.querySelector("#progress-text").innerHTML = "Loading " + (progress * 100).toFixed(0) + "%";
             }
         });
     </script>
