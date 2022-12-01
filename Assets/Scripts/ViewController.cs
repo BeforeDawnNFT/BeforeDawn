@@ -6,14 +6,17 @@ using UnityEngine.UI;
 public class ViewController : MonoBehaviour
 {
     public CanvasGroup[] pageViews;
+    public Button twitterButton;
 
     private void Awake()
     {
         GoToPageView(0, false);
         pageViews[0].GetOrAddComponent<Image>();
-        pageViews[0].GetOrAddComponent<Button>().onClick.AddListener(()=> GoToPageView(1));
+        pageViews[0].GetOrAddComponent<Button>().onClick.AddListener(() => GoToPageView(1));
         pageViews[1].GetOrAddComponent<Image>();
-        pageViews[1].GetOrAddComponent<Button>().onClick.AddListener(()=> GoToPageView(2));
+        pageViews[1].GetOrAddComponent<Button>().onClick.AddListener(() => GoToPageView(2));
+
+        twitterButton.onClick.AddListener(() => Application.OpenURL("https://twitter.com/beforedawnnft"));
     }
 
     private void GoToPageView(int pageViewIdx, bool fade = true)
@@ -25,7 +28,7 @@ public class ViewController : MonoBehaviour
             canvasGroup.alpha = 0;
             canvasGroup.blocksRaycasts = false;
         }
-        
+
         if (fade) pageViews[pageViewIdx].DOFade(1, 0.5f);
         else pageViews[pageViewIdx].alpha = 1;
         pageViews[pageViewIdx].blocksRaycasts = true;
