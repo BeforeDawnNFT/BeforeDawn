@@ -1,36 +1,24 @@
+using DanielLochner.Assets.SimpleScrollSnap;
 using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ViewController : MonoBehaviour
 {
-    public CanvasGroup[] pageViews;
+    public GameObject[] pageViews;
     public Button twitterButton;
+    public SimpleScrollSnap scrollSnap;
 
     private void Awake()
     {
-        GoToPageView(0, false);
+        // GoToPageView(0, false);
         pageViews[0].GetOrAddComponent<Image>();
-        pageViews[0].GetOrAddComponent<Button>().onClick.AddListener(() => GoToPageView(1));
+        pageViews[0].GetOrAddComponent<Button>().onClick.AddListener(() => scrollSnap.GoToPanel(1));
         pageViews[1].GetOrAddComponent<Image>();
-        pageViews[1].GetOrAddComponent<Button>().onClick.AddListener(() => GoToPageView(2));
-
+        pageViews[1].GetOrAddComponent<Button>().onClick.AddListener(() => scrollSnap.GoToPanel(0));
+        
         twitterButton.onClick.AddListener(() => Application.OpenURL("https://twitter.com/beforedawnnft"));
-    }
-
-    private void GoToPageView(int pageViewIdx, bool fade = true)
-    {
-        if (pageViewIdx < 0) pageViewIdx = 0;
-        if (pageViewIdx >= pageViews.Length) pageViewIdx = pageViews.Length - 1;
-        foreach (var canvasGroup in pageViews)
-        {
-            canvasGroup.alpha = 0;
-            canvasGroup.blocksRaycasts = false;
-        }
-
-        if (fade) pageViews[pageViewIdx].DOFade(1, 0.5f);
-        else pageViews[pageViewIdx].alpha = 1;
-        pageViews[pageViewIdx].blocksRaycasts = true;
     }
 }
