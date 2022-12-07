@@ -23,7 +23,7 @@ public class ViewController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.mouseScrollDelta.y > 0) scrollSnap.GoToPreviousPanel();
-        if(Input.mouseScrollDelta.y < 0) scrollSnap.GoToNextPanel();
+        if(Input.mouseScrollDelta.y < 0) scrollSnap.GoToPreviousPanel();
+        if(Input.mouseScrollDelta.y > 0) scrollSnap.GoToNextPanel();
     }
 }
