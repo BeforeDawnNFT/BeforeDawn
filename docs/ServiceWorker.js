@@ -1,9 +1,9 @@
 const cacheName = "VRcollab-BeforeDawn-1.0.0";
 const contentToCache = [
     "Build/build.loader.js",
-    "Build/fc33993b4317f24d772b8ec8054906e1.js.unityweb",
-    "Build/5fc8e761d56cc4a5e5c34c6e77846583.data.unityweb",
-    "Build/3fe66fa6731b0adcce57de3bff2d3c41.wasm.unityweb",
+    "Build/809c33e1a346ecae303f41b0c2bb838f.js.unityweb",
+    "Build/f02a0b9473037178eae6179f1c800b6f.data.unityweb",
+    "Build/a366dea681804c4a3a685f6de0135598.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
