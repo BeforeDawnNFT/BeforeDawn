@@ -13,12 +13,17 @@ public class ViewController : MonoBehaviour
 
     private void Awake()
     {
-        // GoToPageView(0, false);
         pageViews[0].GetOrAddComponent<Image>();
         pageViews[0].GetOrAddComponent<Button>().onClick.AddListener(() => scrollSnap.GoToPanel(1));
         pageViews[1].GetOrAddComponent<Image>();
         pageViews[1].GetOrAddComponent<Button>().onClick.AddListener(() => scrollSnap.GoToPanel(0));
         
         twitterButton.onClick.AddListener(() => Application.OpenURL("https://twitter.com/beforedawnnft"));
+    }
+
+    private void Update()
+    {
+        if(Input.mouseScrollDelta.y > 0) scrollSnap.GoToPreviousPanel();
+        if(Input.mouseScrollDelta.y < 0) scrollSnap.GoToNextPanel();
     }
 }
