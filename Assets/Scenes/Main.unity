@@ -1153,6 +1153,8 @@ MonoBehaviour:
   - {fileID: 1590500059}
   - {fileID: 1423587701}
   - {fileID: 943071383}
+  mintButton: {fileID: 1938513063}
+  lightPaperButton: {fileID: 1473396751}
   twitterButton: {fileID: 1516855403}
   scrollSnap: {fileID: 1261424835}
 --- !u!1 &943071383
@@ -2156,7 +2158,7 @@ GameObject:
   - component: {fileID: 1473396751}
   - component: {fileID: 1473396754}
   m_Layer: 5
-  m_Name: Whitepaper Button
+  m_Name: LightPaper Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
